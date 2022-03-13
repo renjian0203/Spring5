@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="userService" class="com.renjian.spring.day01.service.UserService">
+       <!--         注入userDao对象-->
+        <property name="userdao" ref="userDao"></property>
+    </bean>
+    <bean id="userDao" class="com.renjian.spring.day01.dao.UserDaoImpl"></bean>
+
+
+
+
+
+
+
+
+</beans>

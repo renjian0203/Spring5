@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--配置User类对象创建-->
+<!--    <bean id="user" class="com.renjian.spring.User"> </bean>-->
+
+
+<!--    set方法进行属性注入-->
+    <bean id="book" class="com.renjian.spring.day01.Book">
+        <property name="name" value="斗破苍穹"></property>
+        <property name="num" value="789"></property>
+        <property name="address">
+            <value><![CDATA[<<南京路>>]]></value>
+        </property>
+    </bean>
+<!--    <bean id="book" class="com.renjian.spring.Book" p:name="倚天屠龙记" p:num="584">-->
+
+<!--    </bean>-->
+
+<!--有参构造方法注入属性-->
+    <bean id="order" class="com.renjian.spring.day01.Orders">
+        <constructor-arg name="oname" value="abc"></constructor-arg>
+        <constructor-arg name="address" value="4548"></constructor-arg>
+    </bean>
+
+
+
+</beans>
