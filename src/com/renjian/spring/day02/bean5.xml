@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!--bean标签中autowire有两个属性
+                ①byName：根据名称注入，被注入的bean的id值要与需要赋值的属性名称相同
+                ②byType：根据类型注入
+-->
+            <bean autowire="byType" id="emp" class="com.renjian.spring.day02.autowire.Emp">
+    <!--    手动装配-->
+    <!--    <property name="dept" ref="dept"></property>-->
+
+    <!--    <property name="dept" ref="dept" ></property>-->
+    </bean>
+        <bean id="dept" class="com.renjian.spring.day02.autowire.Dept"></bean>
+<!--    <bean id="dept1" class="com.renjian.spring.day02.autowire.Dept"></bean>-->
+
+
+
+
+</beans>

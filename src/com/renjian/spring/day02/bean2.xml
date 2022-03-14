@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+<!--        1. 提取list集合类型属性注入-->
+    <util:list id="bookList">
+        <value>《简爱》</value>
+        <value>《海底两万里》</value>
+        <value>《放学后》</value>
+    </util:list>
+<!--2.提取list集合类型属性注入使用-->
+    <bean id="book" class="com.renjian.spring.day02.collectionType.Book" scope="prototype">
+        <property name="list" ref="bookList"></property>
+    </bean>
+
+
+
+</beans>
