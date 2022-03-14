@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--集合类型的属性注入-->
+<bean id="student" class="com.renjian.spring.day02.collectionType.Stu">
+<!--    1.数组类型属性注入-->
+    <property name="course">
+        <array>
+            <value>数学</value>
+            <value>外语</value>
+            <value>日语</value>
+        </array>
+    </property>
+<!--2.集合类型属性注入-->
+    <property name="list">
+        <list>
+            <value>美国</value>
+            <value>日本</value>
+            <value>中国</value>
+        </list>
+    </property>
+
+    <property name="maps">
+        <map>
+            <entry key="用户名" value="renjian"></entry>
+            <entry key="性别" value="男"></entry>
+        </map>
+    </property>
+
+    <property name="sets">
+        <set>
+            <value>mysql</value>
+        </set>
+    </property>
+<!--    注入list集合类型，值是对象-->
+    <property name="courses">
+        <list>
+            <ref bean="chinese"></ref>
+            <ref bean="math"></ref>
+        </list>
+    </property>
+
+</bean>
+    <!--    集合中需要引用的对象-->
+        <bean id="chinese" class="com.renjian.spring.day02.collectionType.Course">
+            <property name="name" value="语文"></property>
+        </bean>
+
+        <bean id="math" class="com.renjian.spring.day02.collectionType.Course">
+            <property name="name" value="高数"></property>
+        </bean>
+
+</beans>
